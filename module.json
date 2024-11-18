@@ -1,0 +1,72 @@
+{
+  "name":"Muxlab Zone Amplifier",
+  "type":"TCP Client",
+  "path":"Hardware",
+  
+  "version":"0.0.1",
+  "description":"Control Muxlab Zone Amplifier",
+  "url":"https://github.com/DonGuig/Muxlab-ZoneAmp-Chataigne-Module",
+  "downloadURL":"https://github.com/DonGuig/Muxlab-ZoneAmp-Chataigne-Module/archive/master.zip",
+
+  "hasInput":false,
+  "hasOutput":true, 
+
+  "hideDefaultCommands":true,
+  
+  "defaults":
+  {	
+    "protocol":"Lines",
+    "autoAdd":true,
+    "messageStructure":"Colon (:) Separated",
+    "firstValueIsTheName":true,
+    "receiveFrequency":100,
+    "output":
+    {
+      "remotePort":4001,
+      "local":false
+    }
+  },
+
+  "parameters":
+  {
+
+  },
+
+  "hideDefaultParameters": [ "autoAdd", "protocol", "messageStructure", "firstValueIsTheName", "receiveFrequency", "output/remotePort", "output/local"],
+
+  "scripts": 
+  [
+    "moduleScript.js"
+  ],
+
+  "values":
+  {
+  },
+
+  "commands":
+  {
+    "Mute":
+    {
+      "menu":"",  
+      "callback":"mute"
+    },
+    "Unmute":
+    {
+      "menu":"",  
+      "callback":"unmute"
+    },
+    "Send custom message":
+    {
+      "menu":"",  
+      "callback":"sendCustomMessage",
+      "parameters":
+      {
+        "Message":
+        {
+          "type":"String",
+          "default":"message"
+        }
+      }
+    }
+  }
+}
